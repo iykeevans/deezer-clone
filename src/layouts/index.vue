@@ -2,7 +2,7 @@
   <div class="layout min-h-screen">
     <NavigationBar />
 
-    <div class="pt-20">
+    <div class="py-20">
       <router-view />
     </div>
   </div>
