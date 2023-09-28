@@ -1,10 +1,15 @@
 <template>
   <div
-    class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-12 gap-y-12 container mx-auto pt-16 px-5 md:px-0"
+    v-if="!isArtistView"
+    class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-12 gap-y-12 container mx-auto pt-16 px-8 md:px-0"
   >
     <div v-for="artist in artists" :key="artist.id" class="rounded">
       <artist-card :artist="artist" />
     </div>
+  </div>
+
+  <div v-else>
+    <artist />
   </div>
 </template>
 
@@ -13,8 +18,10 @@ import { onMounted, ref } from "vue";
 import { getArtists } from "./artists.service";
 import { IArtist } from "./artists.typings";
 import ArtistCard from "./components/artist-card.vue";
+import Artist from "./artist/index.vue";
 
 const artists = ref<IArtist[]>([]);
+const isArtistView = ref(true);
 
 onMounted(() => {
   getArtists().then((data) => (artists.value = data));

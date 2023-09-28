@@ -2,9 +2,9 @@
   <div
     class="bg-white/[0.40] h-20 border border-solid border-red-50 fixed w-full"
   >
-    <div class="container mx-auto flex items-center h-full">
+    <div class="container mx-auto flex items-center h-full px-8 md:px-0">
       <div
-        class="h-14 w-14 rounded-full bg-gray-200 flex items-center justify-center mr-8"
+        class="h-14 w-14 flex-none rounded-full bg-gray-200 flex items-center justify-center mr-8"
       >
         <img
           class="h-full w-full rounded-full object-cover"
@@ -12,7 +12,7 @@
         />
       </div>
 
-      <div class="relative w-[50%]">
+      <div class="relative md:w-[50%] w-full h-12">
         <svg
           width="24"
           height="24"
@@ -48,7 +48,7 @@
         <input
           type="text"
           placeholder="Search Artist"
-          class="w-full border border-solid border-[#d9d9d9] bg-white rounded h-14 px-4 pl-14 py-4"
+          class="w-full border border-solid border-[#d9d9d9] bg-white rounded h-full px-4 pl-14 py-4"
         />
       </div>
     </div>
