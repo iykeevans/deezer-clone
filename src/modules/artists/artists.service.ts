@@ -111,5 +111,3 @@ const artists = [
 export const getArtists = () => {
   return Promise.resolve(artists) as Promise<IArtist[]>;
 };
-
-const getArtist = (artist: string) => {};
