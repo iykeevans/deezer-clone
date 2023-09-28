@@ -1,4 +1,5 @@
-import { IArtist } from "./artists.typings";
+import { IArtist, ITrack, IResponse } from "./artists.typings";
+import { api } from "../../api/config";
 
 const artists = [
   {
@@ -110,4 +111,8 @@ const artists = [
 
 export const getArtists = () => {
   return Promise.resolve(artists) as Promise<IArtist[]>;
+};
+
+export const artistSearch = (artist = "eminem" as string) => {
+  return api.get(`search?q=${artist}`).json<IResponse & { data: ITrack[] }>();
 };
