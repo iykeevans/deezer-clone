@@ -1,19 +1,19 @@
 <template>
-  <div class="background-gradient"></div>
+  <div class="layout h-screen">
+    <NavigationBar />
+
+    <div class="pt-20">
+      <router-view />
+    </div>
+  </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    return {};
-  },
-});
+<script setup lang="ts">
+import NavigationBar from "./components/NavigationBar.vue";
 </script>
 
 <style scoped>
-.background-gradient {
+.layout {
   background: hsla(30, 82%, 91%, 1);
 
   background: linear-gradient(
@@ -35,7 +35,5 @@ export default defineComponent({
   );
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FBE9D7", endColorstr="#F9FAF5", GradientType=1 );
-
-  height: 100vh;
 }
 </style>
