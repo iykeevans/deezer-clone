@@ -15,5 +15,5 @@ export default defineConfig({
   build: {
     sourcemap: true,
   },
-  // base: "deezer-clone",
+  base: "deezer-clone",
 });
