@@ -1,3 +1,5 @@
+import { IArtist } from "./artists.typings";
+
 const artists = [
   {
     id: 25,
@@ -107,7 +109,7 @@ const artists = [
 ];
 
 export const getArtists = () => {
-  return Promise.resolve(artists);
+  return Promise.resolve(artists) as Promise<IArtist[]>;
 };
 
 const getArtist = (artist: string) => {};

@@ -1,5 +1,5 @@
 <template>
-  <div class="layout h-screen">
+  <div class="layout min-h-screen">
     <NavigationBar />
 
     <div class="pt-20">
