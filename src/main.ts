@@ -1,14 +1,17 @@
 import { createApp } from "vue";
 import * as Sentry from "@sentry/vue";
+import { createPinia } from "pinia";
 
 import App from "./App.vue";
 import router from "./router";
 // import "normalize.css";
 import "./main.css";
 
+const pinia = createPinia();
 const app = createApp(App);
 
 app.use(router);
+app.use(pinia);
 
 Sentry.init({
   app,

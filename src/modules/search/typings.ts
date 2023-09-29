@@ -2,7 +2,7 @@ export interface IArtist {
   id: number;
   name: string;
   link: string;
-  share: string;
+  share?: string;
   picture: string;
   picture_small: string;
   picture_medium: string;

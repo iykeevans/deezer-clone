@@ -1,9 +1,6 @@
 <template>
   <div class="layout min-h-screen">
-    <NavigationBar>
-      <avatar />
-      <search-input :handle-search="store.handleSearch" />
-    </NavigationBar>
+    <NavigationBar> <go-back /> </NavigationBar>
 
     <div class="py-20">
       <router-view />
@@ -13,11 +10,7 @@
 
 <script setup lang="ts">
 import NavigationBar from "./components/NavigationBar.vue";
-import SearchInput from "../components/search-input.vue";
-import Avatar from "../components/avatar.vue";
-import { useSearchStore } from "../modules/search/store";
-
-const store = useSearchStore();
+import GoBack from "../components/go-back.vue";
 </script>
 
 <style scoped>

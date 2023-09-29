@@ -1,12 +1,18 @@
 import { createRouter, createWebHistory } from "vue-router";
-import artistsRoutes from "./modules/artists/artists.routes";
+import searchRoutes from "./modules/search/routes";
+import artistRoutes from "./modules/artist/routes";
 
 const routes = [
   {
     path: "/",
     component: () => import("./layouts/index.vue"),
-    redirect: "/artists",
-    children: [...artistsRoutes],
+    redirect: "/search",
+    children: [...searchRoutes],
+  },
+  {
+    path: "/",
+    component: () => import("./layouts/secondary.vue"),
+    children: [...artistRoutes],
   },
 ];
 
