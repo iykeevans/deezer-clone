@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 * {
-    font-family: 'Mulish', sans-serif;
-    /* font-family: 'Young Serif', serif; */
-    /* font-family: 'DM Serif Display', serif; */
+  font-family: "Mulish", sans-serif;
+  /* font-family: 'Young Serif', serif; */
+  /* font-family: 'DM Serif Display', serif; */
 }
 
 .serif-font {
-    font-family: 'DM Serif Display', serif;
+  font-family: "DM Serif Display", serif;
 }
