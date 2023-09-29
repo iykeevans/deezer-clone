@@ -17,8 +17,8 @@
       </div>
 
       <div>
-        <div class="serif-font text-2xl">{{ artist.name }}</div>
-        <div class="text-xs">{{ "382k" }} Fans</div>
+        <div class="serif-font text-2xl">{{ trimString(artist.name, 19) }}</div>
+        <div class="text-xs">{{ artist.nb_fan }} Fans</div>
       </div>
     </div>
 
@@ -33,9 +33,14 @@
 </template>
 
 <script setup lang="ts">
-import { IArtist } from "../artists.typings";
+import { IArtist } from "../typings.ts";
 
 defineProps<{ artist: IArtist }>();
+
+const trimString = (value: string, maxStringLength: number): string =>
+  value.length > maxStringLength
+    ? `${value.substring(0, maxStringLength)}...`
+    : value;
 </script>
 
 <style scoped></style>
