@@ -2,7 +2,7 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 import { $_searchByArtist } from "./service";
-import { IArtist, ITrack } from "./typings";
+import { IArtist } from "./typings";
 
 export const useSearchStore = defineStore("search", () => {
   const artists = ref<IArtist[]>([]);

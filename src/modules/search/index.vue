@@ -14,7 +14,7 @@
 
     <div v-else class="flex w-full justify-center mt-40">
       <div v-if="!store.isSearching">Please Search For An Artist</div>
-      <pulse-loader v-else />
+      <spinner v-else />
     </div>
   </div>
 
@@ -27,7 +27,7 @@
 import { useRouter } from "vue-router";
 import ArtistCard from "./components/artist-card.vue";
 import Artist from "../artist/index.vue";
-import PulseLoader from "vue-spinner/src/PulseLoader.vue";
+import Spinner from "../../components/spinner.vue";
 import { useSearchStore } from "./store";
 
 const store = useSearchStore();
