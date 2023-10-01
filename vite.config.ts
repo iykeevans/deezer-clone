@@ -24,5 +24,8 @@ export default defineConfig({
     sourcemap: true,
   },
   test: vitestConfig.test,
-  // base: "deezer-clone",
+  base: "deezer-clone",
+  preview: {
+    port: 5173,
+  },
 });

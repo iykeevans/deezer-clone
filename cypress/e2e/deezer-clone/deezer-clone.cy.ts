@@ -2,7 +2,7 @@
 
 describe("Deezer Clone", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:5173");
+    cy.visit("/");
   });
 
   it("Loads The App Correctly", () => {
