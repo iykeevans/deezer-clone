@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it } from "vitest";
 import { render, screen } from "@testing-library/vue";
 import { createTestingPinia } from "@pinia/testing";
 import SearchPage from "./index.vue";

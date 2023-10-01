@@ -1,6 +1,5 @@
 import { describe, it, expect } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/vue";
-import { createTestingPinia } from "@pinia/testing";
 import SearchInput from "./index.vue";
 
 describe("Search Component Tests", async () => {
