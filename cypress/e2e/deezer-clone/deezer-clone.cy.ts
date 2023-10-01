@@ -6,7 +6,7 @@ describe("Deezer Clone", () => {
   });
 
   it("Loads The App Correctly", () => {
-    cy.visit("/");
+    cy.visit("/deezer-clone");
   });
 
   it("should have the text `Please Search For An Artist` on initial load", () => {
