@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import NavigationBar from "./components/NavigationBar.vue";
-import SearchInput from "../components/search-input.vue";
+import SearchInput from "../components/search-input/index.vue";
 import Avatar from "../components/avatar.vue";
 import { useSearchStore } from "../modules/search/store";
 

@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import searchRoutes from "./modules/search/routes";
 import artistRoutes from "./modules/artist/routes";
 
-const routes = [
+export const routes = [
   {
     path: "/",
     component: () => import("./layouts/index.vue"),
