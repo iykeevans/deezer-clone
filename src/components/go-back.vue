@@ -6,6 +6,7 @@
     viewBox="0 0 100 125"
     class="h-16 cursor-pointer"
     @click="$router.back()"
+    data-testid="go-back"
   >
     <g>
       <g>

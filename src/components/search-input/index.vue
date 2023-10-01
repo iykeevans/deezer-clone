@@ -36,6 +36,7 @@
       type="text"
       placeholder="Search Artist"
       class="w-full border border-solid border-[#d9d9d9] bg-white rounded h-full px-4 pl-14 py-4"
+      data-testid="search-input"
       v-model="searchInput"
     />
 
@@ -43,7 +44,10 @@
       type="button"
       style="background: hsla(30, 82%, 91%, 1)"
       class="py-1 px-2 font-semibold rounded absolute right-2 top-1/2 -translate-y-1/2"
+      :class="{ 'text-gray-500': !searchInput }"
       @click="handleSearch(searchInput)"
+      :disabled="!searchInput"
+      data-testid="search-button"
     >
       Search
     </button>

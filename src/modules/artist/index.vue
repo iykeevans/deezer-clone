@@ -2,8 +2,8 @@
   <div class="container mx-auto pt-10 px-8 md:px-0">
     <banner
       :artistName="artist?.name"
-      :numberOfFans="artist.nb_fan"
-      :picture="artist?.picture_big"
+      :numberOfFans="artist.nb_fan ?? 0"
+      :picture="artist?.picture_big ?? ''"
       :is-loading="isLoading"
     />
 
@@ -15,7 +15,7 @@
           <div v-for="(album, i) in albums" :key="i">
             <album-card
               :title="album.title"
-              :year="album.release_date"
+              :year="album.release_date ?? ''"
               :picture="album.cover_big"
               :isLoading="isLoadingAlbums"
             />
@@ -34,7 +34,7 @@
           >
             <track-tile
               :trackTitle="track.title"
-              :trackTime="track.duration"
+              :trackTime="Number(track.duration)"
               :index="i"
               :is-loading="isLoadingTopTracks"
             />
@@ -58,25 +58,16 @@ import {
   $_getArtistData,
   $_getArtistTopTracks,
 } from "./service";
+import {
+  artist as artistMock,
+  albums as albumsMock,
+  tracks as tracksMock,
+} from "./artist.mock";
 import { ITrack, IArtist, IAlbum } from "./typings";
 
-const tracks = ref<ITrack[]>([...new Array(5).fill({})]);
-const artist = ref<IArtist>({
-  name: "",
-  link: "",
-  share: "",
-  picture: "",
-  picture_small: "",
-  picture_medium: "",
-  picture_big: "",
-  picture_xl: "",
-  nb_album: 0,
-  nb_fan: 0,
-  radio: false,
-  tracklist: "",
-  type: "",
-});
-const albums = ref<IAlbum[]>([...new Array(5).fill({})]);
+const tracks = ref<ITrack[]>(tracksMock);
+const artist = ref<IArtist>(artistMock);
+const albums = ref<IAlbum[]>(albumsMock);
 const isLoading = ref(true);
 const isLoadingAlbums = ref(true);
 const isLoadingTopTracks = ref(true);
@@ -88,7 +79,6 @@ const fetchArtistData = async () => {
     artist.value = response;
   } catch (error: any) {
     alert("Unable to fetch artist data");
-    throw new Error(error);
   } finally {
     isLoading.value = false;
   }
@@ -100,7 +90,6 @@ const fetchArtistAlbums = async () => {
     albums.value = response.data;
   } catch (error: any) {
     alert("Unable to fetch artist data");
-    throw new Error(error);
   } finally {
     isLoadingAlbums.value = false;
   }
@@ -112,7 +101,6 @@ const fetchArtistTopTracks = async () => {
     tracks.value = response.data;
   } catch (error: any) {
     alert("Unable to fetch artist data");
-    throw new Error(error);
   } finally {
     isLoadingTopTracks.value = false;
   }
