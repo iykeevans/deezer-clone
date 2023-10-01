@@ -2,7 +2,7 @@
 
 describe("Deezer Clone", () => {
   beforeEach(() => {
-    cy.visit("/");
+    cy.visit("/deezer-clone");
   });
 
   it("Loads The App Correctly", () => {
